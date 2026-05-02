@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Design tokens: calm wellness palette (light) */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-mp-bg: #f7f9f9;
+  --color-mp-text: #2c3e50;
+  --color-mp-text-secondary: #566573;
+  --color-mp-blue: #7fb3d5;
+  --color-mp-teal: #76d7c4;
+  --color-mp-lavender: #c39bd3;
+  --color-mp-sage: #a9dfbf;
+  --color-mp-coral: #f1948a;
+  --color-mp-yellow: #f9e79f;
+  --color-mp-card: rgba(255, 255, 255, 0.72);
+  --color-mp-level-low: #a9dfbf;
+  --color-mp-level-mild: #f9e79f;
+  --color-mp-level-mod: #f5b041;
+  --color-mp-level-high: #e8a0a0;
+  --shadow-mp-soft: 0 8px 32px rgba(44, 62, 80, 0.08);
+  --shadow-mp-card: 0 4px 24px rgba(127, 179, 213, 0.12);
+}
+
+/* Soft dark theme — not pure black */
+.dark {
+  --color-mp-bg: #1e252d;
+  --color-mp-text: #e8eef2;
+  --color-mp-text-secondary: #9fb0be;
+  --color-mp-blue: #8fbdd8;
+  --color-mp-teal: #8dd9c9;
+  --color-mp-lavender: #c9aae0;
+  --color-mp-sage: #8fc9a8;
+  --color-mp-coral: #e8a89e;
+  --color-mp-yellow: #dfd18a;
+  --color-mp-card: rgba(36, 44, 54, 0.85);
+  --shadow-mp-soft: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --color-mp-text-on-dark: #e8eef2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-mp-text);
+  background: var(--color-mp-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Gradient mesh for hero / backgrounds */
+.mp-gradient-bg {
+  background-color: var(--color-mp-bg);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 20% -10%, rgb(127 179 213 / 0.35), transparent 55%),
+    radial-gradient(ellipse 100% 60% at 90% 10%, rgb(195 155 211 / 0.25), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgb(169 223 191 / 0.2), transparent 45%);
+}
+
+.dark .mp-gradient-bg {
+  background-image:
+    radial-gradient(ellipse 120% 80% at 20% -10%, rgb(127 179 213 / 0.12), transparent 55%),
+    radial-gradient(ellipse 100% 60% at 90% 10%, rgb(195 155 211 / 0.1), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgb(118 215 196 / 0.08), transparent 45%);
+}
